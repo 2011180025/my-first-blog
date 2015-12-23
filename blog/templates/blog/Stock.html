@@ -1,0 +1,63 @@
+{% load staticfiles %}
+<html>
+	<head>
+	<link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+		<title>KJB Financial Report</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static "css/blog.css" %}">
+		
+<script language="javascript" type="text/javascript">
+function Cal(){
+a=Number(document.calculator.number1.value);
+b=Number(document.calculator.number2.value);
+c=Number(document.calculator.number3.value);
+b=b/100+1;
+c=c/100+1;
+d=a/(b-c);
+document.calculator.total.value=d;
+}
+</script>
+		
+	</head>
+	<body>
+		<div class="page-header">
+			<h1><a href="/">Stock</a></h1>
+		</div>
+
+		<div class="Little-title">
+			<h1>What is it?</h1>
+			<h3>
+			주식회사는 자본단체이므로 자본이 없이는 성립할 수 없다.<br>
+			자본은 사원인 주주의 출자이며, 권리와 의무의 단위로서의 주식으로 나누어진다.<br>
+			따라서 주식에는 자본을 구성하는 분자로서의 금액의 뜻과, 주주의 회사에 대한 권리·의무의 단위인 주주권으로서의 뜻이 있다.<br>
+			</h3>
+		</div>
+		
+		<div class="Little-title">
+			<h1>How to calculate?</h1>
+			<h3>
+			주식의 현재가치를 구하는 공식은 다른 자산의 현재가치를 구하는 공식과 같다.<br>
+			자본시장에서 비슷한 위험을 갖는 증권에서 벌 수 있는 수익률로 현금흐름을 할인한다.<br>
+			주주는 배당의 흐름 형태로 이 회사에서 현금을 받는다.<br>
+			따라서 "주식 가치 = 기대 미래 배당"이다.<br>
+			여기에서, 기대 미래 배당은 "배당수익/(할인율-기대성장률)"이다.<br>
+			(단, 기대성장률<할인율이어야함, 기대성장률이 더 높다면 무한)<br>
+			즉, <b>"주식 가치 = 배당수익/(할인율-기대성장률)"</b><br><br>
+			물론 이 방식은 순수하게 배당수익만을 가지고 판단한 방법이다.
+			</h3>
+		</div>
+		
+		<div class="Little-title">
+			<h1>For example</h1>
+			<h3>
+				<form name="calculator">
+			내년의 배당수익 <input type="text" name="number1" size=4>원이며, 연이자율(=할인율) <input type="text" name="number2" size=1>%인 동시에 배당성장률 <input type="text" name="number3" size=1>%을 감안하면, 주식가격은 <input type="text" name="total" size=6>원으로 환산된다.
+				<input type="button" value="Cal" onclick="javascript:Cal();">
+				</form>
+		</div>
+
+
+		</div>
+	</body>
+</html>

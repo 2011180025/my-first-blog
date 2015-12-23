@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<html>
+	<head>
+	<link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+		<title>KJB Financial Report</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static "css/blog.css" %}">
+		
+<script language="javascript" type="text/javascript">
+function Cal(){
+a=Number(document.calculator.number1.value);
+b=Number(document.calculator.number2.value);
+c=Number(document.calculator.number3.value);
+c=c/100+1
+var d=Math.pow(c, a);
+e=b/d
+document.calculator.total.value=e;
+}
+</script>
+		
+	</head>
+	<body>
+		<div class="page-header">
+			<h1><a href="/">Net present value</a></h1>
+		</div>
+
+		<div class="Little-title">
+			<h1>What is it?</h1>
+			<h3>줄여서 '순현가' 또는 NPV라고도 함. 어떤 사업의 가치를 나타내는 척도 중의 하나.<br>최초 투자 시기부터 사업이 끝나는 시기까지의 연도별 순편익의 흐름을 각각 현재 가치로 환산한 것.<br>즉, 순현재가치란 편익과 비용을 할인율에 따라 현재 가치로 환산하고 편익의 현재가치에서 비용의 현재가치를 뺀 값을 말한다.</h3>
+		</div>
+		
+		<div class="Little-title">
+			<h1>How to calculate?</h1>
+			<h3>순현재가치 = X년 후의 미래가치 Y / 연이자율(=할인율)^x <br>으로 계산되어진다. </h3>
+		</div>
+		
+		<div class="Little-title">
+			<h1>For example</h1>
+			<h3>
+				<form name="calculator">
+					<input type="text" name="number1" size=1>년 후의, 미래가치 <input type="text" name="number2" size=6>원을 연이자율(=할인율) <input type="text" name="number3" size=1>%를 적용하면, 현재가치 <input type="text" name="total" size=6>원으로 환산된다.
+					<input type="button" value="Cal" onclick="javascript:Cal();">
+				</form>
+			</h3>
+		</div>
+	</body>
+</html>
